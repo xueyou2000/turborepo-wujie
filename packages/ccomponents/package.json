@@ -1,0 +1,12 @@
+{
+  "author": "",
+  "description": "",
+  "files": [
+    "**/*"
+  ],
+  "keywords": [],
+  "license": "ISC",
+  "name": "@repo/components",
+  "type": "module",
+  "version": "1.0.0"
+}

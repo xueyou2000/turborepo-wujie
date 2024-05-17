@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { XyButton } from '@repo/components'
+</script>
 
 <template>
   <div>hello</div>
 
-  <button>click</button>
+  <XyButton>click</XyButton>
 </template>
