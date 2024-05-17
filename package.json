@@ -4,6 +4,7 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "web:dev": "env-cmd -e dev -r envs/web.js --verbose turbo run dev --filter=web",
+    "docs:dev": "env-cmd -e dev -r envs/docs.js --verbose turbo run dev --filter=docs",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "postinstall": "turbo run stub"
@@ -25,6 +26,8 @@
   },
   "packageManager": "pnpm@8.9.0",
   "dependencies": {
-    "vue": "^3.4.27"
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.2",
+    "wujie-vue3": "^1.0.22"
   }
 }

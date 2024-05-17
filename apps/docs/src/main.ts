@@ -1,22 +1,37 @@
-import { Header } from "@repo/ui/header";
-import "./style.css";
-import typescriptLogo from "/typescript.svg";
-import { Counter } from "@repo/ui/counter";
-import { setupCounter } from "@repo/ui/setup-counter";
+import { createApp } from 'vue'
+import { router } from './routers'
+import App from './App.vue'
 
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    ${Header({ title: "Docs" })}
-    <div class="card">
-      ${Counter()}
-    </div>
-  </div>
-`;
+function setup() {
+  const app = createApp(App)
+  app.use(router).mount('#app')
+  return app
+}
+declare global {
+  interface Window {
+    // 是否存在无界
+    __POWERED_BY_WUJIE__?: boolean
+    // 子应用mount函数
+    __WUJIE_MOUNT: () => void
+    // 子应用unmount函数
+    __WUJIE_UNMOUNT: () => void
+    // 子应用无界实例
+    __WUJIE: { mount: () => void }
+  }
+}
 
-setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
+if (window.__POWERED_BY_WUJIE__) {
+  let instance: ReturnType<typeof setup>
+  window.__WUJIE_MOUNT = () => {
+    console.log('>>> 子应用挂载')
+    instance = setup()
+  }
+  window.__WUJIE_UNMOUNT = () => {
+    console.log('>>> 子应用装卸')
+    instance?.unmount()
+  }
+  console.log('>>>', window?.$wujie)
+  window.__WUJIE.mount()
+} else {
+  setup()
+}
