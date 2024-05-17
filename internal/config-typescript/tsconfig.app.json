@@ -10,7 +10,19 @@
     "noEmit": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitReturns": true
+    "noImplicitReturns": true,
+    "esModuleInterop": true,
   },
+  "include": [
+    "apps/**/*.ts",
+    "apps/**/*.tsx",
+    "packages/**/*.ts",
+    "packages/**/*.tsx",
+    "vite-env.d.ts",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ],
   "exclude": ["node_modules"]
 }
