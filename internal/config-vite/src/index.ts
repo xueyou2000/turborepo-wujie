@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import eslintPlugin from 'vite-plugin-eslint'
+import TurboConsole from 'unplugin-turbo-console/vite'
 import { resolve } from 'node:path'
 
 export const useApplicationConfig = defineConfig(({ mode }) => {
@@ -31,7 +32,8 @@ export const useApplicationConfig = defineConfig(({ mode }) => {
       }),
       eslintPlugin({
         include: ['packages/**/*.ts', 'packages/**/*.vue', 'apps/**/*.ts', 'apps/**/*.vue']
-      })
+      }),
+      TurboConsole({})
     ],
     resolve: {
       alias: {

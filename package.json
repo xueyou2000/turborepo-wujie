@@ -20,6 +20,7 @@
     "prettier": "^3.2.5",
     "turbo": "latest",
     "unbuild": "^2.0.0",
+    "unplugin-turbo-console": "^1.8.6",
     "vite-plugin-eslint": "^1.8.1"
   },
   "packageManager": "pnpm@8.9.0",

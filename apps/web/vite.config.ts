@@ -1,16 +1,16 @@
-import type { ConfigEnv, UserConfig } from "vite";
-import { mergeConfig } from "vite";
-import { useApplicationConfig } from "@repo/vite-config";
+import type { ConfigEnv, UserConfig } from 'vite'
+import { mergeConfig } from 'vite'
+import { useApplicationConfig } from '@repo/vite-config'
 
 export default ({ command, mode }: ConfigEnv): UserConfig => {
-  const applicationConfig = useApplicationConfig({ command, mode });
+  const applicationConfig = useApplicationConfig({ command, mode })
 
   const overrides = {
     server: {
       // 端口号
-      port: 6010,
-    },
-  };
+      port: 6010
+    }
+  }
 
-  return mergeConfig(applicationConfig, overrides);
-};
+  return mergeConfig(applicationConfig, overrides)
+}

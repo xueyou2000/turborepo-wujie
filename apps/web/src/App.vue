@@ -5,5 +5,5 @@ import { XyButton } from '@repo/components'
 <template>
   <div>hello</div>
 
-  <XyButton>click</XyButton>
+  <XyButton @click="() => console.log('click')">click</XyButton>
 </template>
