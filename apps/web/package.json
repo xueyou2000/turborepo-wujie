@@ -5,18 +5,19 @@
   "type": "module",
   "scripts": {
     "dev": "vite --clearScreen false",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint \"src/**/*.ts\""
   },
   "dependencies": {
-    "@repo/ui": "workspace:*"
+    "@repo/ui": "workspace:*",
+    "vue": "^3.4.27"
   },
   "devDependencies": {
+    "@repo/components": "workspace:*",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@repo/vite-config": "workspace:*",
-    "@repo/components": "workspace:*",
     "eslint": "^8.57.0",
     "typescript": "^5.4.5",
     "vite": "^5.1.4"

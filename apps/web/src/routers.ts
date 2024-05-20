@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-export const routerHistory = createWebHistory()
+export const routerHistory = createWebHistory(import.meta.env.VITE_BASE_ROUTER)
 export const router = createRouter({
   history: routerHistory,
   strict: true,
@@ -8,7 +8,7 @@ export const router = createRouter({
     { path: '/home', redirect: '/' },
     {
       path: '/',
-      component: () => import(/* webpackChunkName: "home" */ './pages/home/home-index.vue')
+      component: () => import(/* webpackChunkName: "home" */ './pages//home/home-index.vue')
       // props: (route) => ({ query: route.query.q })
     },
     { path: '/docs', redirect: '/docs/a' },

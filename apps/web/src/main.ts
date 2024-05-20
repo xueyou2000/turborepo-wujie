@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import WujieVue from 'wujie-vue3'
 import { router } from './routers'
 import App from './App.vue'
+import { MicroApps } from './constants'
 
 const { setupApp, preloadApp, bus } = WujieVue
 
@@ -22,7 +23,7 @@ setupApp({
   name: 'docs', // 子应用唯一
   sync: true,
   props,
-  url: '//localhost:3000/'
+  url: MicroApps.docs
 })
 // preloadApp({ name: 'docs', url: '//localhost:3000/' })
 

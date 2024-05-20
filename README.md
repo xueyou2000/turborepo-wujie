@@ -1,33 +1,30 @@
-# `Turborepo` Vite starter
+# vite-turborepo
 
-This is an official starter Turborepo.
+- [x] turborepo 构建系统
+- [x] `eslint`, `prettier`
+- [x] 路由&路由缓存
+- [] fetch接口&mock数据
+- [] 主题
+- [] 国际化
+- [] 权限
+- [] 状态管理
+- [] 测试
+- [] 打包
+- [] 部署
 
-## Using this example
 
-Run the following command:
+## 简单部署
 
-```sh
-npx create-turbo@latest -e with-vite
+在`whistle`中配置
+
+```txt
+apps.xueyou.com/web/assets file:///home/xueyou/download/playground/vite-turborepo/apps/web/dist-prod/assets
+apps.xueyou.com/web file://</home/xueyou/download/playground/vite-turborepo/apps/web/dist-prod/index.html>
+
+
+apps.xueyou.com/docs/assets file:///home/xueyou/download/playground/vite-turborepo/apps/docs/dist-prod/assets
+apps.xueyou.com/docs file://</home/xueyou/download/playground/vite-turborepo/apps/docs/dist-prod/index.html>
+
+
+apps.xueyou.com /home/xueyou/download/playground/vite-turborepo/apps/web/dist-prod/index.html
 ```
-
-## What's inside?
-
-This Turborepo includes the following packages and apps:
-
-### Apps and Packages
-
-- `docs`: a vanilla [vite](https://vitejs.dev) ts app
-- `web`: another vanilla [vite](https://vitejs.dev) ts app
-- `@repo/ui`: a stub component & utility library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: shared `eslint` configurations
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting

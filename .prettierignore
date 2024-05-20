@@ -7,3 +7,5 @@
 **/*.sh
 
 /public/*
+/dist-prod/*
+/dist-dev/*

@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-export const routerHistory = createWebHistory()
+console.log('>>> import.meta.env', import.meta.env)
+console.log('>>> import.meta.env.VITE_APP_TITLE', import.meta.env.VITE_APP_TITLE)
+export const routerHistory = createWebHistory(import.meta.env.VITE_BASE_ROUTER)
 export const router = createRouter({
   history: routerHistory,
   strict: true,

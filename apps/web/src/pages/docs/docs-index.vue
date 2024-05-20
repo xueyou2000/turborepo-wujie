@@ -2,9 +2,10 @@
 import WujieVue from 'wujie-vue3'
 import { useRoute } from 'vue-router'
 import { computed, watch } from 'vue'
+import { MicroApps } from '../../constants';
 
 const route = useRoute()
-const docsUrl = computed(() => `//localhost:3000/${route.params.path}`)
+const docsUrl = computed(() => `${MicroApps.docs}/${route.params.path}`)
 
 // watch(
 //   () => route.params.path,

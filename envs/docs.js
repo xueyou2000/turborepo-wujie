@@ -8,6 +8,7 @@ function base() {
 module.exports = {
   dev: Object.assign(base(), {
     VITE_API_BASE_PATH: 'https://test-api.xueyou.com',
+    VITE_BASE_ROUTER: '',
     // 是否删除console.log
     VITE_DROP_CONSOLE: 'false',
     // 是否删除debugger
@@ -19,6 +20,7 @@ module.exports = {
   }),
   prod: Object.assign(base(), {
     VITE_API_BASE_PATH: 'https://api.xueyou.com',
+    VITE_BASE_ROUTER: '/docs/',
     // 是否删除console.log
     VITE_DROP_CONSOLE: 'true',
     // 是否删除debugger

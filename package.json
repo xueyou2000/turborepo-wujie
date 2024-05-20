@@ -1,10 +1,13 @@
 {
   "private": true,
+  "name": "vite-turborepo",
   "scripts": {
-    "build": "turbo build",
+    "build": "pnpm run web:build | pnpm run docs:build",
     "dev": "turbo dev",
     "web:dev": "env-cmd -e dev -r envs/web.js --verbose turbo run dev --filter=web",
     "docs:dev": "env-cmd -e dev -r envs/docs.js --verbose turbo run dev --filter=docs",
+    "web:build": "env-cmd -e prod -r envs/web.js turbo build --filter=web",
+    "docs:build": "env-cmd -e prod -r envs/docs.js turbo build --filter=docs",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "postinstall": "turbo run stub"
@@ -22,9 +25,10 @@
     "turbo": "latest",
     "unbuild": "^2.0.0",
     "unplugin-turbo-console": "^1.8.6",
-    "vite-plugin-eslint": "^1.8.1"
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-cdn-import": "^0.3.5"
   },
-  "packageManager": "pnpm@8.9.0",
+  "packageManager": "pnpm@9.1.1",
   "dependencies": {
     "vue": "^3.4.27",
     "vue-router": "^4.3.2",

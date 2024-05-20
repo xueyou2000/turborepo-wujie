@@ -5,10 +5,20 @@ import { useApplicationConfig } from '@repo/vite-config'
 export default ({ command, mode }: ConfigEnv): UserConfig => {
   const applicationConfig = useApplicationConfig({ command, mode })
 
-  const overrides = {
-    server: {
-      // 端口号
-      port: 6010
+  const isPro = mode === 'production'
+
+  let overrides: UserConfig
+
+  if (isPro) {
+    overrides = {
+      base: '/web/',
+    }
+  } else {
+    overrides = {
+      server: {
+        // 端口号
+        port: 6010
+      }
     }
   }
 

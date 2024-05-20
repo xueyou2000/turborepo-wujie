@@ -2,13 +2,47 @@ import { defineConfig, loadEnv } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import eslintPlugin from 'vite-plugin-eslint'
 import TurboConsole from 'unplugin-turbo-console/vite'
+import { autoComplete, Plugin as importToCDN } from 'vite-plugin-cdn-import'
 import { resolve } from 'node:path'
+
+function getProductionPlugins() {
+  return [
+    importToCDN({
+      modules: [
+        // autoComplete('vue'),
+        {
+          name: 'vue',
+          var: 'Vue',
+          path: 'https://s4.zstatic.net/npm/vue@3.4.27/dist/vue.global.prod.js'
+        },
+        {
+          name: 'vue-router',
+          var: 'VueRouter',
+          path: 'https://s4.zstatic.net/npm/vue-router@4.2.4/dist/vue-router.global.prod.js'
+          // path: 'https://unpkg.com/vue-router@4.2.4/dist/vue-router.global.prod.js'
+        },
+        // {
+        //   name: 'vue-demi',
+        //   var: 'VueDemi',
+        //   path: 'https://cdn.bootcdn.net/ajax/libs/vue-demi/0.14.5/index.iife.js'
+        // },
+        // {
+        //   name: 'pinia',
+        //   var: 'Pinia',
+        //   path: 'https://cdn.bootcdn.net/ajax/libs/pinia/2.1.6/pinia.iife.prod.min.js'
+        // }
+      ]
+    }),
+  ]
+}
 
 export const useApplicationConfig = defineConfig(({ mode }) => {
   const root = process.cwd()
   const pathResolve = (pathname: string) => resolve(root, '.', pathname)
 
   const env = loadEnv(mode, root)
+  const isPro = mode === 'production'
+  console.log('>>> env', env)
 
   return {
     base: '/',
@@ -33,7 +67,8 @@ export const useApplicationConfig = defineConfig(({ mode }) => {
       eslintPlugin({
         include: ['packages/**/*.ts', 'packages/**/*.vue', 'apps/**/*.ts', 'apps/**/*.vue']
       }),
-      TurboConsole({})
+      TurboConsole({}),
+      ...(isPro ? getProductionPlugins() : [])
     ],
     resolve: {
       alias: {
