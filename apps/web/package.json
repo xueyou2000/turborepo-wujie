@@ -10,11 +10,10 @@
     "lint": "eslint \"src/**/*.ts\""
   },
   "dependencies": {
-    "@repo/ui": "workspace:*",
-    "vue": "^3.4.27"
+    "vue": "^3.4.27",
+    "@repo/components": "workspace:*"
   },
   "devDependencies": {
-    "@repo/components": "workspace:*",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@repo/vite-config": "workspace:*",

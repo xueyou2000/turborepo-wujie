@@ -8,5 +8,13 @@
   "license": "ISC",
   "name": "@repo/components",
   "type": "module",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "dependencies": {
+    "vue": "^3.4.27"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "vite": "^5.1.4",
+    "@repo/typescript-config": "workspace:*"
+  }
 }

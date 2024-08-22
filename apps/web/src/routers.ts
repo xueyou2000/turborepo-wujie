@@ -9,7 +9,6 @@ export const router = createRouter({
     {
       path: '/',
       component: () => import(/* webpackChunkName: "home" */ './pages//home/home-index.vue')
-      // props: (route) => ({ query: route.query.q })
     },
     { path: '/docs', redirect: '/docs/a' },
     {
@@ -17,10 +16,5 @@ export const router = createRouter({
       name: 'docs',
       component: () => import(/* webpackChunkName: "home" */ './pages/docs/docs-index.vue')
     }
-    // {
-    //   path: '/:patchMatch(.*)*',
-    //   name: 'NotFound',
-    //   component: import(/* webpackChunkName: "home" */ './views/ErrorPages/NotFound.vue')
-    // }
   ]
 })

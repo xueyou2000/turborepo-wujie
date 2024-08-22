@@ -63,9 +63,6 @@ importers:
 
   apps/docs:
     dependencies:
-      '@repo/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
       vue:
         specifier: ^3.4.27
         version: 3.4.27(typescript@5.4.5)
@@ -91,16 +88,13 @@ importers:
 
   apps/web:
     dependencies:
-      '@repo/ui':
+      '@repo/components':
         specifier: workspace:*
-        version: link:../../packages/ui
+        version: link:../../packages/ccomponents
       vue:
         specifier: ^3.4.27
         version: 3.4.27(typescript@5.4.5)
     devDependencies:
-      '@repo/components':
-        specifier: workspace:*
-        version: link:../../packages/ccomponents
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../internal/config-eslint
@@ -143,22 +137,21 @@ importers:
         specifier: ^5.1.4
         version: 5.2.11(@types/node@20.12.12)(less@4.2.0)
 
-  packages/ccomponents: {}
-
-  packages/ui:
+  packages/ccomponents:
+    dependencies:
+      vue:
+        specifier: ^3.4.27
+        version: 3.4.27(typescript@5.4.5)
     devDependencies:
-      '@repo/eslint-config':
-        specifier: workspace:*
-        version: link:../../internal/config-eslint
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../../internal/config-typescript
-      eslint:
-        specifier: ^8.57.0
-        version: 8.57.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
+      vite:
+        specifier: ^5.1.4
+        version: 5.2.11(@types/node@20.12.12)(less@4.2.0)
 
 packages:
 

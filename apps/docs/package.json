@@ -10,7 +10,6 @@
     "lint": "eslint \"src/**/*.ts\""
   },
   "dependencies": {
-    "@repo/ui": "workspace:*",
     "vue": "^3.4.27"
   },
   "devDependencies": {

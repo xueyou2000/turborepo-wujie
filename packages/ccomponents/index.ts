@@ -1,3 +1,3 @@
-import XyButton from './XyButton.vue'
+import MiButton from './MiButton.vue'
 
-export { XyButton }
+export { MiButton }

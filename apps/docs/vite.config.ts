@@ -10,7 +10,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 
   if (isPro) {
     overrides = {
-      base: '/docs/',
+      base: '/docs/'
     }
   } else {
     overrides = {

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import WujieVue from 'wujie-vue3'
 import { useRoute } from 'vue-router'
-import { computed, watch } from 'vue'
-import { MicroApps } from '../../constants';
+import { computed } from 'vue'
+import { MicroApps } from '../../constants'
 
 const route = useRoute()
 const docsUrl = computed(() => `${MicroApps.docs}/${route.params.path}`)

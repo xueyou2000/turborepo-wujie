@@ -4,7 +4,6 @@
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
-// console.log(window.$wujie.location.host, window.location.host)
 
 onMounted(() => {
   console.log(window.$wujie?.location?.host, window.location.host)

@@ -1,7 +1,7 @@
 function base() {
   return {
-    VITE_APP_TITLE: '管理平台',
-    VITE_STORE_PREFIX: 'XY',
+    VITE_APP_TITLE: 'web',
+    VITE_STORE_PREFIX: 'MI'
   }
 }
 
@@ -16,7 +16,7 @@ module.exports = {
     // 环境
     VITE_NODE_ENV: 'dev',
     // 输出路径
-    VITE_OUT_DIR: 'dist-dev',
+    VITE_OUT_DIR: 'dist-dev'
   }),
   prod: Object.assign(base(), {
     VITE_API_BASE_PATH: 'https://api.xueyou.com',
@@ -28,6 +28,6 @@ module.exports = {
     // 环境
     VITE_NODE_ENV: 'prod',
     // 输出路径
-    VITE_OUT_DIR: 'dist-prod',
-  }),
+    VITE_OUT_DIR: 'dist-prod'
+  })
 }

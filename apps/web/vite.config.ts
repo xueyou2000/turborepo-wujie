@@ -11,7 +11,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 
   if (isPro) {
     overrides = {
-      base: '/web/',
+      base: '/web/'
     }
   } else {
     overrides = {
