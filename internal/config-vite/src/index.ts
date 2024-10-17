@@ -1,8 +1,8 @@
 import { defineConfig, loadEnv } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import eslintPlugin from 'vite-plugin-eslint'
-import TurboConsole from 'unplugin-turbo-console/vite'
-import { autoComplete, Plugin as importToCDN } from 'vite-plugin-cdn-import'
+// import TurboConsole from 'unplugin-turbo-console/vite'
+import { Plugin as importToCDN } from 'vite-plugin-cdn-import'
 import { resolve } from 'node:path'
 
 function getProductionPlugins() {
@@ -20,7 +20,7 @@ function getProductionPlugins() {
           var: 'VueRouter',
           path: 'https://s4.zstatic.net/npm/vue-router@4.2.4/dist/vue-router.global.prod.js'
           // path: 'https://unpkg.com/vue-router@4.2.4/dist/vue-router.global.prod.js'
-        },
+        }
         // {
         //   name: 'vue-demi',
         //   var: 'VueDemi',
@@ -32,7 +32,7 @@ function getProductionPlugins() {
         //   path: 'https://cdn.bootcdn.net/ajax/libs/pinia/2.1.6/pinia.iife.prod.min.js'
         // }
       ]
-    }),
+    })
   ]
 }
 
@@ -67,7 +67,7 @@ export const useApplicationConfig = defineConfig(({ mode }) => {
       eslintPlugin({
         include: ['packages/**/*.ts', 'packages/**/*.vue', 'apps/**/*.ts', 'apps/**/*.vue']
       }),
-      TurboConsole({}),
+      // TurboConsole({}),
       ...(isPro ? getProductionPlugins() : [])
     ],
     resolve: {
