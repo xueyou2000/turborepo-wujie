@@ -1,0 +1,15 @@
+{
+  "name": "@packages/utils",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "@repo/typescript-config": "workspace:*"
+  }
+}

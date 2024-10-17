@@ -4,7 +4,11 @@ import { router } from './routers'
 import App from './App.vue'
 import { MicroApps } from './constants'
 
+import { test } from '@packages/utils'
+
 const { setupApp } = WujieVue
+
+test()
 
 const degrade =
   window.localStorage.getItem('degrade') === 'true' ||

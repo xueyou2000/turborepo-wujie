@@ -95,6 +95,9 @@ importers:
         specifier: ^3.4.27
         version: 3.4.27(typescript@5.4.5)
     devDependencies:
+      '@packages/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../internal/config-eslint
@@ -152,6 +155,15 @@ importers:
       vite:
         specifier: ^5.1.4
         version: 5.2.11(@types/node@20.12.12)(less@4.2.0)
+
+  packages/utils:
+    devDependencies:
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../../internal/config-typescript
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
 
 packages:
 
